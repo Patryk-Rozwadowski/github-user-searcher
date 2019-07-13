@@ -1,7 +1,7 @@
 {
-  "name": "gif-finder",
+  "name": "github-username-searcher",
   "version": "1.0.0",
-  "description": "Gif finder",
+  "description": "Github searcher",
   "main": "js/script.js",
   "scripts": {
     "test": "npm-run-all test:*",
