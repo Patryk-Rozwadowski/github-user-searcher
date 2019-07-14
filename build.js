@@ -25,7 +25,7 @@ var App = function (_React$Component) {
 
     _createClass(App, [{
         key: "onChangeText",
-        value: function onChangeText(e) {
+        value: function onChangeText(event) {
             this.setState({
                 searchText: event.target.value
             });
@@ -40,7 +40,7 @@ var App = function (_React$Component) {
             fetch(url).then(function (response) {
                 return response.json();
             }).then(function (responseJson) {
-                return _this2.setState({ user: responseJson.items });
+                return _this2.setState({ users: responseJson.items });
             });
         }
     }, {
@@ -53,8 +53,8 @@ var App = function (_React$Component) {
                 { className: "searcher-container" },
                 React.createElement(
                     "form",
-                    { onSubmit: function onSubmit(e) {
-                            return _this3.onSubmit(e);
+                    { onSubmit: function onSubmit(event) {
+                            return _this3.onSubmit(event);
                         } },
                     React.createElement("input", {
                         type: "text",
@@ -119,7 +119,11 @@ var User = function (_React$Component3) {
                 "div",
                 null,
                 React.createElement("img", { src: this.props.user.avatar_url }),
-                React.createElement("a", { href: this.props.user.url })
+                React.createElement(
+                    "a",
+                    { href: this.props.user.url },
+                    this.props.user.login
+                )
             );
         }
     }]);

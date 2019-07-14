@@ -7,7 +7,7 @@ class App extends React.Component {
         }
     }
 
-    onChangeText(e) {
+    onChangeText(event) {
         this.setState({
             searchText: event.target.value
         })
@@ -18,13 +18,14 @@ class App extends React.Component {
         const url = `https://api.github.com/search/users?q=${this.state.searchText}`
         fetch(url)
             .then(response => response.json())
-            .then(responseJson => this.setState({ user: responseJson.items }))
+            .then(responseJson => this.setState({ users: responseJson.items }))
+
     }
 
     render() {
         return (
             <div className="searcher-container">
-                <form onSubmit={e => this.onSubmit(e)}>
+                <form onSubmit={event => this.onSubmit(event)}>
                     <input
                         type="text"
                         id="searchText"
@@ -54,10 +55,10 @@ class UsersList extends React.Component {
 
 class User extends React.Component {
     render() {
-        return ( 
+        return (
             <div>
                 <img src={this.props.user.avatar_url} />
-                <a href={this.props.user.url}/>
+                <a href={this.props.user.url}>{this.props.user.login}</a>
             </div>
         )
     }
