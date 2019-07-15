@@ -1,0 +1,5 @@
+.users-container, .users-container .user-container { margin: 0 auto; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-line-pack: center; align-content: center; text-align: center; -ms-flex-direction: column; flex-direction: column; }
+
+.users-container .user-container, .users-container .user-container .user-container { margin: 50px auto; }
+
+.users-container .user-container img, .users-container .user-container .user-container img { border-radius: 50%; width: 200px; }

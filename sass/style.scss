@@ -1,0 +1,19 @@
+.users-container,
+%users-container {
+    margin:0 auto;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    text-align:center;
+    flex-direction: column;
+
+    .user-container {
+        @extend %users-container;
+        margin:50px auto;
+
+        img {
+            border-radius: 50%;
+            width:200px;
+        }
+    }
+}
