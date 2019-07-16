@@ -6,8 +6,10 @@ body { background-color: #222; }
 
 .users-container .user-container img { border-radius: 50%; width: 100px; }
 
-.searcher-container { text-align: center; }
+.searcher-container { text-align: center; margin-top: 50px; }
 
-.searcher-container .searcher-element { border: 0; padding: 15px; font-family: "Roboto", sans-serif; text-align: center; margin: 50px auto; font-size: 1.5em; }
+.searcher-container .searcher-element { border: 0; padding: 15px; font-family: "Roboto", sans-serif; text-align: center; margin: 20px auto 50px; font-size: 1.5em; }
+
+.searcher-container label.searcher-element { color: #fff; }
 
 a, p { margin: 5px; font-family: "Roboto", sans-serif; color: #fff; text-decoration: none; }

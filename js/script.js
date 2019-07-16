@@ -33,6 +33,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="searcher-container">
+                <label className="searcher-element" for="searchText">Find users on github!</label>
                 <form onSubmit={event => this.onSubmit(event)}>
                     <input
                         type="text"

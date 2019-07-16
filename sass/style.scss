@@ -30,14 +30,19 @@ body {
 
 .searcher-container {
   text-align: center;
+  margin-top:50px;
 
   .searcher-element {
     border: 0;
     padding: 15px;
     font-family: "Roboto", sans-serif;
     text-align: center;
-    margin: 50px auto;
+    margin: 20px auto 50px; 
     font-size: 1.5em;
+  }
+
+  label.searcher-element {
+    color: #fff;
   }
 }
 

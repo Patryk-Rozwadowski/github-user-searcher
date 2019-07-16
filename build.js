@@ -63,6 +63,11 @@ var App = function (_React$Component) {
                 'div',
                 { className: 'searcher-container' },
                 React.createElement(
+                    'label',
+                    { className: 'searcher-element', 'for': 'searchText' },
+                    'Find users on github!'
+                ),
+                React.createElement(
                     'form',
                     { onSubmit: function onSubmit(event) {
                             return _this3.onSubmit(event);
