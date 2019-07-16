@@ -1,5 +1,9 @@
-.users-container, .users-container .user-container { margin: 0 auto; display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-line-pack: center; align-content: center; text-align: center; -ms-flex-direction: column; flex-direction: column; }
+body { background-color: #222; }
 
-.users-container .user-container, .users-container .user-container .user-container { margin: 50px auto; }
+.users-container { margin: 0 auto; width: 75%; text-align: center; display: -ms-grid; display: grid; -ms-grid-columns: (1fr)[4]; grid-template-columns: repeat(4, 1fr); }
 
-.users-container .user-container img, .users-container .user-container .user-container img { border-radius: 50%; width: 200px; }
+.users-container .user-container { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-line-pack: center; align-content: center; -ms-flex-direction: column; flex-direction: column; margin: 40px auto; }
+
+.users-container .user-container img { border-radius: 50%; width: 100px; }
+
+a, p { margin: 5px; font-family: "Roboto", sans-serif; color: #fff; text-decoration: none; }

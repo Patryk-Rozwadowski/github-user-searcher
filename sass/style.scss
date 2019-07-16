@@ -1,19 +1,37 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+body {
+  background-color: #222;
+}
+
 .users-container,
 %users-container {
-    margin:0 auto;
-    display:flex;
-    justify-content: center;
-    align-content: center;
-    text-align:center;
+  margin: 0 auto;
+  width: 75%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  .user-container {
+    @include flex-center;
     flex-direction: column;
+    margin: 40px auto;
 
-    .user-container {
-        @extend %users-container;
-        margin:50px auto;
-
-        img {
-            border-radius: 50%;
-            width:200px;
-        }
+    img {
+      border-radius: 50%;
+      width: 100px;
     }
+  }
+}
+
+a,
+p {
+  margin:5px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-decoration: none;
 }
