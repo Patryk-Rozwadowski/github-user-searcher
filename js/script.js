@@ -2,8 +2,9 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            searchText: null,
-            users: []
+            searchText: '',
+            users: [],
+            placeholder: 'Search username!'
         }
     }
 
@@ -15,7 +16,11 @@ class App extends React.Component {
             this.onSubmit();
         }
     }
-
+    onClick() {
+        this.setState({
+            placeholder: ''
+        })
+    }
     onSubmit() {
         event.preventDefault();
         const url = `https://api.github.com/search/users?q=${this.state.searchText}`
@@ -33,10 +38,12 @@ class App extends React.Component {
                         type="text"
                         id="searchText"
                         value={this.state.searchText || ''}
-                        placeholder="Search username"
+                        placeholder={this.state.placeholder}
+                        className="searcher-element"
+                        onClick={() => this.onClick()}
                         onChange={e => this.onChangeText(e)} />
                 </form>
-                <UsersList users={this.state.users}/>
+                <UsersList users={this.state.users} />
             </div>
         )
     }

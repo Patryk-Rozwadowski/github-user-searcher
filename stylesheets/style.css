@@ -6,4 +6,8 @@ body { background-color: #222; }
 
 .users-container .user-container img { border-radius: 50%; width: 100px; }
 
+.searcher-container { text-align: center; }
+
+.searcher-container .searcher-element { border: 0; padding: 15px; font-family: "Roboto", sans-serif; text-align: center; margin: 50px auto; font-size: 1.5em; }
+
 a, p { margin: 5px; font-family: "Roboto", sans-serif; color: #fff; text-decoration: none; }
