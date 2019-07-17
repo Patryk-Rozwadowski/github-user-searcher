@@ -30,7 +30,7 @@ var App = function (_React$Component) {
             this.setState({
                 searchText: event.target.value
             });
-            if (this.state.searchText.length > 2) {
+            if (this.state.searchText.length > 3) {
                 this.onSubmit();
             }
         }
@@ -114,9 +114,9 @@ var UsersList = function (_React$Component2) {
     }, {
         key: 'users',
         get: function get() {
-            return this.props.users.map(function (user) {
+            if (typeof this.props.users !== 'undefined') return this.props.users.map(function (user) {
                 return React.createElement(User, { key: user.id, user: user });
-            });
+            });else if (typeof this.props.users == 'undefined') return React.createElement(UserNotFound, null);
         }
     }]);
 
@@ -159,6 +159,33 @@ var User = function (_React$Component3) {
     }]);
 
     return User;
+}(React.Component);
+
+var UserNotFound = function (_React$Component4) {
+    _inherits(UserNotFound, _React$Component4);
+
+    function UserNotFound() {
+        _classCallCheck(this, UserNotFound);
+
+        return _possibleConstructorReturn(this, (UserNotFound.__proto__ || Object.getPrototypeOf(UserNotFound)).apply(this, arguments));
+    }
+
+    _createClass(UserNotFound, [{
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                { className: 'user-container-notFound' },
+                React.createElement(
+                    'p',
+                    null,
+                    'User not found!'
+                )
+            );
+        }
+    }]);
+
+    return UserNotFound;
 }(React.Component);
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('root'));

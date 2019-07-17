@@ -12,7 +12,7 @@ class App extends React.Component {
         this.setState({
             searchText: event.target.value
         })
-        if (this.state.searchText.length > 2) {
+        if (this.state.searchText.length > 3) {
             this.onSubmit();
         }
     }
@@ -27,7 +27,6 @@ class App extends React.Component {
         fetch(url)
             .then(response => response.json())
             .then(responseJson => this.setState({ users: responseJson.items }))
-
     }
 
     render() {
@@ -52,7 +51,9 @@ class App extends React.Component {
 
 class UsersList extends React.Component {
     get users() {
-        return this.props.users.map(user => <User key={user.id} user={user} />)
+        if (typeof this.props.users !== 'undefined')
+            return this.props.users.map(user => <User key={user.id} user={user} />)
+        else if (typeof this.props.users == 'undefined') return <UserNotFound />
     }
 
     render() {
@@ -75,6 +76,18 @@ class User extends React.Component {
         )
     }
 }
+
+class UserNotFound extends React.Component {
+    render() {
+        return (
+            <div className="user-container-notFound">
+                <p>User not found!</p>
+            </div>
+        )
+    }
+}
+
+
 
 ReactDOM.render(
     <App />,

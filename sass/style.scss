@@ -46,6 +46,12 @@ body {
   }
 }
 
+.user-container-notFound {
+  @include flex-center;
+  text-align: center;
+  width:100%;
+}
+
 a,
 p {
   margin: 5px;

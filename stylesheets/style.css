@@ -12,4 +12,6 @@ body { background-color: #222; }
 
 .searcher-container label.searcher-element { color: #fff; }
 
+.user-container-notFound { display: -ms-flexbox; display: flex; -ms-flex-pack: center; justify-content: center; -ms-flex-line-pack: center; align-content: center; text-align: center; width: 100%; }
+
 a, p { margin: 5px; font-family: "Roboto", sans-serif; color: #fff; text-decoration: none; }
